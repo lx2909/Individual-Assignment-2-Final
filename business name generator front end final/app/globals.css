@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --primary: 346 84% 80%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 208 100% 97%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 262 83% 98%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 346 84% 80%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 346 84% 74%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 346 84% 74%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotation, 0deg));
+  }
+}
+
+.pastel-card {
+  @apply rounded-2xl shadow-md;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.style-option {
+  @apply relative overflow-hidden rounded-xl p-4 transition-all duration-300;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.style-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.style-option-icon {
+  @apply absolute right-3 bottom-3 opacity-20;
+  font-size: 2rem;
+}
+
+/* Name Style Colors */
+.name-style-modern {
+  @apply border-pink-200;
+}
+.name-style-modern.selected {
+  @apply bg-pink-100 border-pink-300;
+}
+
+.name-style-classic {
+  @apply border-blue-200;
+}
+.name-style-classic.selected {
+  @apply bg-blue-100 border-blue-300;
+}
+
+.name-style-creative {
+  @apply border-purple-200;
+}
+.name-style-creative.selected {
+  @apply bg-purple-100 border-purple-300;
+}
+
+.name-style-futuristic {
+  @apply border-cyan-200;
+}
+.name-style-futuristic.selected {
+  @apply bg-cyan-100 border-cyan-300;
+}
+
+.name-style-minimalist {
+  @apply border-gray-200;
+}
+.name-style-minimalist.selected {
+  @apply bg-gray-100 border-gray-300;
+}
+
+.name-style-playful {
+  @apply border-yellow-200;
+}
+.name-style-playful.selected {
+  @apply bg-yellow-100 border-yellow-300;
+}
+
+.name-style-technical {
+  @apply border-green-200;
+}
+.name-style-technical.selected {
+  @apply bg-green-100 border-green-300;
+}
+
+.name-style-traditional {
+  @apply border-orange-200;
+}
+.name-style-traditional.selected {
+  @apply bg-orange-100 border-orange-300;
+}
+
+/* Slogan Style Colors */
+.slogan-style-inspirational {
+  @apply border-purple-200;
+}
+.slogan-style-inspirational.selected {
+  @apply bg-purple-100 border-purple-300;
+}
+
+.slogan-style-funny {
+  @apply border-yellow-200;
+}
+.slogan-style-funny.selected {
+  @apply bg-yellow-100 border-yellow-300;
+}
+
+.slogan-style-professional {
+  @apply border-blue-200;
+}
+.slogan-style-professional.selected {
+  @apply bg-blue-100 border-blue-300;
+}
+
+.slogan-style-catchy {
+  @apply border-pink-200;
+}
+.slogan-style-catchy.selected {
+  @apply bg-pink-100 border-pink-300;
+}
+
+.slogan-style-bold {
+  @apply border-red-200;
+}
+.slogan-style-bold.selected {
+  @apply bg-red-100 border-red-300;
+}
+
+.slogan-style-minimalist {
+  @apply border-gray-200;
+}
+.slogan-style-minimalist.selected {
+  @apply bg-gray-100 border-gray-300;
+}
+
+.slogan-style-question {
+  @apply border-teal-200;
+}
+.slogan-style-question.selected {
+  @apply bg-teal-100 border-teal-300;
+}
+
+/* Update the slogan-style-emotional to slogan-style-quirky */
+.slogan-style-quirky {
+  @apply border-rose-200;
+}
+.slogan-style-quirky.selected {
+  @apply bg-rose-100 border-rose-300;
+}
+
+/* Remove the old emotional class if you want */
+/* .slogan-style-emotional { @apply border-rose-200; }
+.slogan-style-emotional.selected { @apply bg-rose-100 border-rose-300; } */
+
