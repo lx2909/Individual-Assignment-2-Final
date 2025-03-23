@@ -33,7 +33,7 @@ export default function ResultsPage() {
 
         console.log("Sending request with:", { industry, description, nameStyle, sloganStyles })
 
-        const response = await fetch("http://127.0.0.1:5001/generate", {
+        const response = await fetch("https://individual-assignment-2-final.onrender.com/generate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ industry, description, nameStyle, sloganStyles }),
